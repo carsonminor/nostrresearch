@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 212 100% 47%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -97,5 +97,94 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Research Platform Custom Styles */
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Scientific paper typography */
+  .prose-research {
+    @apply prose prose-slate dark:prose-invert max-w-none;
+  }
+
+  .prose-research h1 {
+    @apply text-2xl font-bold mb-4 text-foreground;
+  }
+
+  .prose-research h2 {
+    @apply text-xl font-semibold mb-3 mt-6 text-foreground;
+  }
+
+  .prose-research h3 {
+    @apply text-lg font-medium mb-2 mt-4 text-foreground;
+  }
+
+  .prose-research p {
+    @apply mb-4 leading-relaxed text-foreground;
+  }
+
+  .prose-research blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-muted-foreground;
+  }
+
+  .prose-research code {
+    @apply bg-muted px-1 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose-research pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto;
+  }
+
+  .prose-research ul, .prose-research ol {
+    @apply mb-4 pl-6;
+  }
+
+  .prose-research li {
+    @apply mb-1;
+  }
+
+  /* Anonymous period styling */
+  .anonymous-badge {
+    @apply bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200;
+  }
+
+  /* Zap button styling */
+  .zap-button {
+    @apply bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white;
+  }
+
+  /* Research topic badges */
+  .topic-physics {
+    @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300;
+  }
+
+  .topic-biology {
+    @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300;
+  }
+
+  .topic-chemistry {
+    @apply bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300;
+  }
+
+  .topic-mathematics {
+    @apply bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300;
+  }
+
+  .topic-computer-science {
+    @apply bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300;
   }
 }

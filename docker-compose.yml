@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  nostrresearch:
+    build: .
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nostrresearch.rule=Host(`nostrresearch.com`)"
+      - "traefik.http.routers.nostrresearch.tls=true"
+      - "traefik.http.routers.nostrresearch.tls.certresolver=letsencrypt"
