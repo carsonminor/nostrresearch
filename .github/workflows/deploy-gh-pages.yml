@@ -1,5 +1,10 @@
 name: Deploy to GitHub Pages
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 on:
   push:
     branches: [ main, master ]
@@ -13,6 +18,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+       with:
+    fetch-depth: 0           # gets all history needed
+    persist-credentials: true  # keeps permissions to push changes
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
